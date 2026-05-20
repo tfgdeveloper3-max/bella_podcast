@@ -165,7 +165,7 @@ const TrendingSection: React.FC = () => {
     return (
         <section
             className="relative w-full overflow-hidden grid bg-[#1c0b05] min-h-[600px]"
-            style={{ gridTemplateColumns: "40% 60%", fontFamily: "'Inter', sans-serif" }} // <- Change made here
+            style={{ gridTemplateColumns: "50% 50%", fontFamily: "'Inter', sans-serif" }} // <- Change made here
         >
             <div className="absolute w-64 h-44 rounded-full pointer-events-none"
                 style={{ background: "#b83800", top: -20, left: 0, filter: "blur(80px)", opacity: 0.16, zIndex: 0 }}
@@ -173,10 +173,10 @@ const TrendingSection: React.FC = () => {
 
             <div className="relative z-[2] px-10 py-16 pl-12">
                 <h2 className="font-extrabold leading-[1.05] tracking-tight text-white"
-                    style={{ fontSize: "clamp(2.8rem,4.5vw,4rem)" }}
+                    style={{ fontSize: "clamp(4.8rem,5vw,6.2rem)" }}
                 >
-                    Discover Our{" "}
-                    <span className="block text-[#e85d00]">Trending Talks</span>
+                    DISCOVER OUR{" "}
+                    <span className="block text-[#e85d00]">TRENDING TALKS</span>
                 </h2>
             </div>
 
@@ -216,7 +216,7 @@ const TrendingSection: React.FC = () => {
                         </div>
 
                         <p
-                            className="text-[0.8rem] leading-relaxed pr-3 transition-colors duration-200"
+                            className="text-[1rem] leading-relaxed pr-3 transition-colors duration-200"
                             style={{ color: hoveredIdx === i ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.38)" }}
                         >
                             {pod.desc}

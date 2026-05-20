@@ -131,26 +131,22 @@ const DiscoverSection: React.FC = () => {
             <style>{fontStyle}</style>
             <section className="w-full relative overflow-hidden bg-[#1c0b05] py-14 px-12 font-['Inter',sans-serif] min-h-[520px]">
 
-                {/* Warm ambient orb */}
                 <div className="absolute w-[300px] h-[200px] rounded-full bg-[#c84000] -top-10 right-[100px] blur-[90px] opacity-[0.18] pointer-events-none z-0" />
 
-                {/* Top Row */}
                 <div className="flex justify-between items-start mb-11 relative z-10">
-                    <p className="max-w-[340px] text-sm text-white/50 leading-relaxed pt-1.5">
+                    <p className="max-w-[340px] text-white/50 text-[1.2rem] leading-tight pt-1.5">
                         From deep-dive interviews to casual banter and true crime thrills — we've got something for every listener.
                     </p>
                     <div className="text-right">
-                        <h2 className="font-['Bebas_Neue',sans-serif] text-[clamp(2.8rem,5vw,4.2rem)] leading-[0.95] text-white tracking-tight">
+                        <h2 className="font-['Bebas_Neue',sans-serif] text-[clamp(4.8rem,7vw,6.2rem)] leading-[0.95] text-white tracking-tight">
                             Let's Discover Your
                             <span className="text-[#e85d00] block">Favorite Talks</span>
                         </h2>
                     </div>
                 </div>
 
-                {/* Cards & Equalizer Row - Ensuring 100% width */}
                 <div className="flex items-end w-full h-[400px] relative z-10 gap-3">
 
-                    {/* Category Voice Tiles */}
                     {CATEGORIES.map((cat, i) => {
                         const isActive = i === activeIdx;
                         const lines = cat.label.split("\n");
@@ -217,9 +213,9 @@ const DiscoverSection: React.FC = () => {
 
                 {/* Bottom text */}
                 <div className="mt-7 text-right relative z-10">
-                    <p className="text-sm text-white/50">
+                    <p className="text-lg text-white/50">
                         And yes, there's a filter for{" "}
-                        <em className="italic text-white/70">
+                        <em className="italic text-[#e85d00]">
                             "only for good vibes."
                         </em>
                     </p>

@@ -1,6 +1,5 @@
 import React from "react";
 
-/* Google Fonts — Bebas Neue */
 const fontStyle = `@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');`;
 
 const WOMAN_IMG = "/images/female-podcast.png"
@@ -59,7 +58,6 @@ const Hero: React.FC = () => {
                 className="relative bg-[#1c0d07] w-full flex flex-col overflow-hidden"
                 style={{ height: "120vh" }}
             >
-                {/* HEADLINE 1 */}
                 <div
                     className="relative px-9 z-10 flex-shrink-0"
                     style={{ paddingTop: "10rem" }}
@@ -114,13 +112,10 @@ const Hero: React.FC = () => {
                     />
                 </div>
 
-                {/* flex spacer */}
                 <div className="flex-grow" />
 
-                {/* GRADIENT CARD */}
                 <div className="relative mx-3.5 mb-3.5 rounded-[22px] overflow-hidden flex-shrink-0" style={{ height: "44vh", minHeight: "330px" }}>
 
-                    {/* gradient bg */}
                     <div
                         className="absolute inset-0"
                         style={{
@@ -136,7 +131,6 @@ const Hero: React.FC = () => {
                         }}
                     />
 
-                    {/* diagonal slices */}
                     {[
                         { left: "-4%", width: "25%", background: "linear-gradient(170deg,#7ab0cc,#4a8aac)", transform: "rotate(-8deg)", opacity: 0.7 },
                         { left: "17%", width: "18%", background: "linear-gradient(170deg,#9a88c4,#6860aa)", transform: "rotate(-8deg)", opacity: 0.5 },
@@ -146,7 +140,6 @@ const Hero: React.FC = () => {
                         <div key={i} className="absolute" style={{ height: "200%", top: "-50%", transformOrigin: "top left", zIndex: 1, ...sl }} />
                     ))}
 
-                    {/* tagline bottom-left */}
                     <div className="absolute bottom-5 left-5 max-w-[200px]" style={{ zIndex: 20 }}>
                         <p className="text-white/90 text-[11.5px] leading-relaxed font-sans">
                             Real voices, real laughs, and real stories — served fresh for your ears.

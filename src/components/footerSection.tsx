@@ -18,7 +18,7 @@ const FooterSection: React.FC = () => {
                         <div className="flex items-center gap-4">
                             <h2
                                 className="text-white font-black uppercase leading-[0.95]"
-                                style={{ fontSize: "clamp(2.4rem,4.5vw,3.8rem)", letterSpacing: "-0.025em" }}
+                                style={{ fontSize: "clamp(4.8rem,6vw,6.2rem)", letterSpacing: "-0.025em" }}
                             >
                                 HAVING FUN
                             </h2>
@@ -33,12 +33,12 @@ const FooterSection: React.FC = () => {
 
                         <h2
                             className="font-black uppercase leading-[0.95]"
-                            style={{ fontSize: "clamp(2.4rem,4.5vw,3.8rem)", letterSpacing: "-0.025em", color: "#e85d00" }}
+                            style={{ fontSize: "clamp(4.8rem,5vw,6.2rem)", letterSpacing: "-0.025em", color: "#e85d00" }}
                         >
                             WITH LISTENING
                         </h2>
 
-                        <p className="text-white/45 text-sm leading-relaxed mt-6 max-w-[360px]">
+                        <p className="text-white/45 text-[1.2rem] leading-relaxed mt-6 max-w-[360px]">
                             Join our community for exclusive updates,
                             exclusive talks, and special offers.
                         </p>
@@ -47,7 +47,7 @@ const FooterSection: React.FC = () => {
                     {/* Right — nav */}
                     <div className="flex gap-16 pt-1">
                         <div>
-                            <p className="text-white font-extrabold text-[0.75rem] tracking-[0.15em] uppercase mb-5">Quick Nav</p>
+                            <p className="text-white font-extrabold text-[1rem] tracking-[0.15em] uppercase mb-5">Quick Nav</p>
                             <ul className="space-y-3">
                                 {["Our Categories", "Provide", "Top Creators", "Let's Join Us"].map(i => (
                                     <li key={i}><a href="#" className="text-white/50 text-[0.82rem] hover:text-white transition-colors">{i}</a></li>
@@ -55,7 +55,7 @@ const FooterSection: React.FC = () => {
                             </ul>
                         </div>
                         <div>
-                            <p className="text-white font-extrabold text-[0.75rem] tracking-[0.15em] uppercase mb-5">Support</p>
+                            <p className="text-white font-extrabold text-[1rem] tracking-[0.15em] uppercase mb-5">Support</p>
                             <ul className="space-y-3">
                                 {["Contact Us", "FAQ", "Community"].map(i => (
                                     <li key={i}><a href="#" className="text-white/50 text-[0.82rem] hover:text-white transition-colors">{i}</a></li>
@@ -63,7 +63,7 @@ const FooterSection: React.FC = () => {
                             </ul>
                         </div>
                         <div>
-                            <p className="text-white font-extrabold text-[0.75rem] tracking-[0.15em] uppercase mb-5">Others</p>
+                            <p className="text-white font-extrabold text-[1rem] tracking-[0.15em] uppercase mb-5">Others</p>
                             <ul className="space-y-3">
                                 {["Privacy Policy", "Terms of Service"].map(i => (
                                     <li key={i}><a href="#" className="text-white/50 text-[0.82rem] hover:text-white transition-colors">{i}</a></li>
@@ -74,7 +74,7 @@ const FooterSection: React.FC = () => {
                 </div>
 
                 <div
-                    className="absolute left-1/2 bottom-0 top-10 pointer-events-none"
+                    className="absolute left-1/2 bottom-0 top-21 pointer-events-none"
                     style={{
                         transform: "translateX(-50%)",
                         zIndex: 20,

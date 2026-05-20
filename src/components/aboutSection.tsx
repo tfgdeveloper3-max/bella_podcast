@@ -45,20 +45,15 @@ const AboutSection: React.FC = () => {
         <>
             <style>{fontStyle}</style>
 
-            {/* Main Section: flex justify-between added for center gap */}
             <section
                 ref={sectionRef}
                 className="relative w-full overflow-hidden bg-[#1c0b05] flex justify-between items-start min-h-[380px] py-14 px-14"
             >
-                {/* Radial vignette */}
                 <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_50%_50%,transparent_40%,rgba(10,3,0,0.55)_100%)]" />
 
-                {/* Warm orange glow */}
                 <div className="absolute -top-20 right-[60px] z-0 h-[260px] w-[340px] rounded-full bg-[#b83800] opacity-[0.22] blur-[90px] pointer-events-none" />
 
-                {/* ── LEFT COLUMN ── */}
                 <div className="relative z-10 w-[210px] flex-shrink-0">
-                    {/* Label */}
                     <p
                         className={`mb-11 font-['Bebas_Neue'] text-base tracking-[0.06em] text-[#d4623a] transition-all duration-500 ease-out delay-[50ms] ${visible ? "translate-y-0 opacity-100" : "translate-y-3.5 opacity-0"
                             }`}
@@ -66,7 +61,6 @@ const AboutSection: React.FC = () => {
                         What's Whispr?
                     </p>
 
-                    {/* Stat */}
                     <div
                         className={`transition-all duration-600 ease-out delay-[180ms] ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
                             }`}
@@ -80,7 +74,6 @@ const AboutSection: React.FC = () => {
                     </div>
                 </div>
 
-                {/* ── RIGHT COLUMN ── */}
                 <div className="relative z-10 max-w-[1000px]">
                     <div
                         className={`transition-all duration-650 ease-out delay-[200ms] ${visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"

@@ -3,7 +3,6 @@ import React from "react";
 const Navbar: React.FC = () => {
     return (
         <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5">
-            {/* Logo */}
             <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
@@ -18,13 +17,12 @@ const Navbar: React.FC = () => {
                 </span>
             </div>
 
-            {/* Nav Links */}
             <ul className="hidden md:flex items-center gap-8">
                 {["About us", "Provide", "Top Creators", "Let's Join Us"].map((item) => (
                     <li key={item}>
                         <a
                             href="#"
-                            className="text-white text-sm font-medium hover:text-orange-400 transition-colors duration-200"
+                            className="text-white text-[1rem] font-medium hover:text-orange-400 transition-colors duration-200"
                             style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
                         >
                             {item}
@@ -33,7 +31,6 @@ const Navbar: React.FC = () => {
                 ))}
             </ul>
 
-            {/* Buttons */}
             <div className="flex items-center gap-3">
                 <button
                     className="px-5 py-2 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#1a0a00] transition-all duration-200"

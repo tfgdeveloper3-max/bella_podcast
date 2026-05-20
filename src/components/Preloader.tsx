@@ -24,7 +24,6 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
           transition-all duration-700 ease-in-out
           ${exiting ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"}`}
             >
-                {/* Logo */}
                 <div className="flex items-center gap-3 animate-[fadeUp_0.6s_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">
                     <div className="w-11 h-11 rounded-full border-2 border-white/70 flex items-center justify-center">
                         <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
@@ -36,7 +35,6 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
                     </span>
                 </div>
 
-                {/* Sound Bars */}
                 <div className="flex items-center gap-[5px] h-12 animate-[fadeUp_0.5s_cubic-bezier(0.22,1,0.36,1)_0.65s_both]">
                     {bars.map((h, i) => (
                         <div
@@ -50,12 +48,10 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
                     ))}
                 </div>
 
-                {/* Progress */}
                 <div className="w-56 h-[2px] bg-white/10 rounded-full overflow-hidden animate-[fadeUp_0.4s_ease_0.9s_both]">
                     <div className="h-full rounded-full bg-gradient-to-r from-[#e85d00] to-[#ff8c00] animate-[load_1.8s_cubic-bezier(0.4,0,0.2,1)_1s_forwards] w-0" />
                 </div>
 
-                {/* Tagline */}
                 <span
                     style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.3em" }}
                     className="text-white/35 text-sm animate-[fadeUp_0.5s_ease_1s_both]"
