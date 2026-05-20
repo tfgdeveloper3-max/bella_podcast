@@ -31,7 +31,7 @@ const AvatarStack: React.FC = () => (
 const floatAnimationStyle = `
   @keyframes floatCard {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-22px); }
+    50% { transform: translateY(-50px); }
   }
 `;
 
@@ -103,8 +103,8 @@ const Hero: React.FC = () => {
                             letterSpacing: "-0.03em",
                         }}
                     >
-                        <span>LISTEN TO</span>
-                        <span className="text-[#e85d00]">SOME FUN</span>
+                        <span>BELLA AND</span>
+                        <span className="text-[#e85d00]">THE BEST</span>
                     </h1>
 
                     <h1
@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
                             letterSpacing: "-0.03em",
                         }}
                     >
-                        TALKS!
+                        SELLERS!
                     </h1>
                 </div>
 

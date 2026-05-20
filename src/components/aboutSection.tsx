@@ -58,7 +58,7 @@ const AboutSection: React.FC = () => {
                         className={`mb-11 font-['Bebas_Neue'] text-base tracking-[0.06em] text-[#d4623a] transition-all duration-500 ease-out delay-[50ms] ${visible ? "translate-y-0 opacity-100" : "translate-y-3.5 opacity-0"
                             }`}
                     >
-                        What's Whispr?
+                        What's Bella?
                     </p>
 
                     <div
@@ -80,12 +80,12 @@ const AboutSection: React.FC = () => {
                             }`}
                     >
                         <p className="m-0 max-w-[1080px] font-['DM_Serif_Display'] text-[clamp(1.55rem,2.5vw,2.1rem)] font-normal leading-[1.42] text-white">
-                            At Whispr, we believe every voice matters. Our modern
+                            At Bella, we believe every voice matters. Our modern
                             podcasting platform empowers creators and thinkers to share
                             their ideas. Whether you're starting out or expanding your
                             audience.{" "}
                             <em className="italic text-white/30">
-                                Whispr offers intuitive tools, a clean interface and a
+                                Bella offers intuitive tools, a clean interface and a
                                 supportive community. This is where conversations start
                                 and resonate.
                             </em>

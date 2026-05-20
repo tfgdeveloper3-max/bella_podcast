@@ -27,6 +27,7 @@ interface Category {
     activeHeight: number;
     activeWidth: number;
     icon: React.ReactNode;
+    accent: string; // Added accent color for waves
     blobs?: BlobShape[];
 }
 
@@ -62,6 +63,7 @@ const CATEGORIES: Category[] = [
         activeHeight: 310,
         activeWidth: 175,
         icon: <SocietyIcon />,
+        accent: "#e06830", // Orange-ish
         blobs: [
             { color: "#40e0f0", size: 160, top: "-30px", left: "-20px", blur: 50, opacity: 0.4 },
             { color: "#ff8040", size: 130, bottom: "-20px", right: "-10px", blur: 45, opacity: 0.5 }
@@ -73,6 +75,7 @@ const CATEGORIES: Category[] = [
         activeHeight: 285,
         activeWidth: 165,
         icon: <TechIcon />,
+        accent: "#d05820", // Deep Orange
         blobs: [
             { color: "#ffe0a0", size: 140, top: "-20px", right: "-20px", blur: 50, opacity: 0.4 },
             { color: "#802000", size: 100, bottom: "10px", left: "10px", blur: 40, opacity: 0.3 }
@@ -84,6 +87,7 @@ const CATEGORIES: Category[] = [
         activeHeight: 300,
         activeWidth: 175,
         icon: <MusicIcon />,
+        accent: "#3060c8", // Blue
         blobs: [
             { color: "#60ffa0", size: 150, top: "-40px", left: "20px", blur: 50, opacity: 0.4 },
             { color: "#2040d0", size: 140, bottom: "-30px", right: "-20px", blur: 50, opacity: 0.5 }
@@ -95,6 +99,7 @@ const CATEGORIES: Category[] = [
         activeHeight: 240,
         activeWidth: 155,
         icon: <ComedyIcon />,
+        accent: "#4888d8", // Light Blue
         blobs: [
             { color: "#80d0ff", size: 140, top: "-20px", left: "-20px", blur: 50, opacity: 0.4 },
             { color: "#1030a0", size: 120, bottom: "-20px", right: "10px", blur: 45, opacity: 0.4 }
@@ -102,8 +107,13 @@ const CATEGORIES: Category[] = [
     },
 ];
 
-// Sound wave heights that mimic a real audio equalizer
-const EQ_HEIGHTS = [320, 180, 360, 140, 280, 100, 340, 160, 300, 120, 260, 200, 240, 150];
+// Mapped sound waves to specific category indices (0 to 3)
+const EQ_ITEMS = [
+    { h: 320, cat: 0 }, { h: 180, cat: 0 }, { h: 360, cat: 0 }, { h: 140, cat: 0 },
+    { h: 280, cat: 1 }, { h: 100, cat: 1 }, { h: 340, cat: 1 },
+    { h: 160, cat: 2 }, { h: 300, cat: 2 }, { h: 120, cat: 2 }, { h: 260, cat: 2 },
+    { h: 200, cat: 3 }, { h: 240, cat: 3 }, { h: 150, cat: 3 }
+];
 
 const DiscoverSection: React.FC = () => {
     const [activeIdx, setActiveIdx] = useState(0);
@@ -197,17 +207,31 @@ const DiscoverSection: React.FC = () => {
                         );
                     })}
 
+                    {/* Connected Sound Waves */}
                     <div className="flex-1 h-full flex items-end gap-[8px]">
-                        {EQ_HEIGHTS.map((h, i) => (
-                            <div
-                                key={i}
-                                className="flex-1 rounded-t-full origin-bottom bg-gradient-to-t from-white/[0.04] to-white/[0.15]"
-                                style={{
-                                    height: `${h}px`,
-                                    animation: `eqBounce ${1.1 + (i * 0.08)}s ease-in-out ${i * 0.1}s infinite alternate`
-                                }}
-                            />
-                        ))}
+                        {EQ_ITEMS.map((item, i) => {
+                            const isActiveCat = item.cat === activeIdx;
+                            const catAccent = CATEGORIES[item.cat].accent;
+
+                            return (
+                                <div
+                                    key={i}
+                                    className="flex-1 rounded-t-full origin-bottom cursor-pointer transition-all duration-500 ease-out"
+                                    style={{
+                                        height: `${item.h}px`,
+                                        opacity: isActiveCat ? 1 : 0.25,
+                                        background: isActiveCat
+                                            ? `linear-gradient(to top, ${catAccent}44, ${catAccent}bb)`
+                                            : "linear-gradient(to top, rgba(255,255,255,0.04), rgba(255,255,255,0.15))",
+                                        animation: isActiveCat
+                                            ? `eqBounce ${1.1 + (i * 0.08)}s ease-in-out ${i * 0.1}s infinite alternate`
+                                            : "none",
+                                        transform: !isActiveCat ? "scaleY(0.4)" : undefined,
+                                    }}
+                                    onMouseEnter={() => handleClick(item.cat)}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
 

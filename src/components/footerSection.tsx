@@ -125,7 +125,7 @@ const FooterSection: React.FC = () => {
                             backgroundClip: "text",
                         }}
                     >
-                        WHISPR
+                       BELLA
                     </p>
                 </div>
             </div>

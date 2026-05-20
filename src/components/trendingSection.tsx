@@ -73,9 +73,11 @@ interface HoverCardProps {
     podcast: Podcast;
     visible: boolean;
     topPx: number;
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
 }
 
-const HoverCard: React.FC<HoverCardProps> = ({ podcast, visible, topPx }) => (
+const HoverCard: React.FC<HoverCardProps> = ({ podcast, visible, topPx, onMouseEnter, onMouseLeave }) => (
     <div
         className="absolute right-4 w-64 rounded-[20px] overflow-hidden z-[100] shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
         style={{
@@ -87,6 +89,8 @@ const HoverCard: React.FC<HoverCardProps> = ({ podcast, visible, topPx }) => (
             transition:
                 "opacity 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1), top 0.38s cubic-bezier(0.4,0,0.2,1)",
         }}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
     >
         <div className="flex items-center justify-between px-3.5 pt-3.5 pb-2.5">
             <div
@@ -119,7 +123,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ podcast, visible, topPx }) => (
         </div>
 
         <div
-            className="flex items-center justify-center gap-2 mx-3.5 my-3 py-2.5 rounded-full text-white text-[0.8rem] font-bold"
+            className="flex items-center justify-center gap-2 mx-3.5 my-3 py-2.5 rounded-full text-white text-[0.8rem] font-bold cursor-pointer"
             style={{ background: podcast.accent }}
         >
             Join Show Now
@@ -133,11 +137,17 @@ const HoverCard: React.FC<HoverCardProps> = ({ podcast, visible, topPx }) => (
 const TrendingSection: React.FC = () => {
     const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
     const [cardTop, setCardTop] = useState(0);
+    const hideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const rightColRef = useRef<HTMLDivElement>(null);
     const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    const handleMouseEnter = useCallback((idx: number) => {
+    const handleMouseEnterRow = useCallback((idx: number) => {
+        if (hideTimeoutRef.current) {
+            clearTimeout(hideTimeoutRef.current);
+            hideTimeoutRef.current = null;
+        }
+
         const row = rowRefs.current[idx];
         const col = rightColRef.current;
         if (!row || !col) return;
@@ -156,7 +166,23 @@ const TrendingSection: React.FC = () => {
         setHoveredIdx(idx);
     }, []);
 
-    const handleMouseLeave = useCallback(() => {
+    const handleMouseLeaveRow = useCallback(() => {
+        // Add a small delay before hiding the card to let the mouse travel to the floating card
+        hideTimeoutRef.current = setTimeout(() => {
+            setHoveredIdx(null);
+        }, 150); // 150ms is enough time to move the mouse
+    }, []);
+
+    const handleCardMouseEnter = useCallback(() => {
+        // Cancel the hide timeout if the mouse successfully enters the card
+        if (hideTimeoutRef.current) {
+            clearTimeout(hideTimeoutRef.current);
+            hideTimeoutRef.current = null;
+        }
+    }, []);
+
+    const handleCardMouseLeave = useCallback(() => {
+        // Hide immediately when leaving the card
         setHoveredIdx(null);
     }, []);
 
@@ -165,7 +191,7 @@ const TrendingSection: React.FC = () => {
     return (
         <section
             className="relative w-full overflow-hidden grid bg-[#1c0b05] min-h-[600px]"
-            style={{ gridTemplateColumns: "50% 50%", fontFamily: "'Inter', sans-serif" }} // <- Change made here
+            style={{ gridTemplateColumns: "50% 50%", fontFamily: "'Inter', sans-serif" }}
         >
             <div className="absolute w-64 h-44 rounded-full pointer-events-none"
                 style={{ background: "#b83800", top: -20, left: 0, filter: "blur(80px)", opacity: 0.16, zIndex: 0 }}
@@ -188,14 +214,16 @@ const TrendingSection: React.FC = () => {
                     podcast={activePodcast}
                     visible={hoveredIdx !== null}
                     topPx={cardTop}
+                    onMouseEnter={handleCardMouseEnter}
+                    onMouseLeave={handleCardMouseLeave}
                 />
 
                 {PODCASTS.map((pod, i) => (
                     <div
                         key={i}
                         ref={(el) => { rowRefs.current[i] = el; }}
-                        onMouseEnter={() => handleMouseEnter(i)}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => handleMouseEnterRow(i)}
+                        onMouseLeave={handleMouseLeaveRow}
                         className="grid items-center cursor-pointer transition-colors duration-200"
                         style={{
                             gridTemplateColumns: "1fr 1fr 36px",

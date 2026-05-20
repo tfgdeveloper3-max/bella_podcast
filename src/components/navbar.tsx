@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
                     className="text-white text-2xl tracking-widest"
                     style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                    whispr
+                    Bella
                 </span>
             </div>
 

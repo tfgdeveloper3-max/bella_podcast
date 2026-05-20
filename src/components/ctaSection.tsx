@@ -85,7 +85,7 @@ const CTASection: React.FC = () => {
                         className="text-white/60 uppercase tracking-[0.25em] mb-8"
                         style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.15rem" }}
                     >
-                        whispr
+                        Bella
                     </p>
 
                     <h1
