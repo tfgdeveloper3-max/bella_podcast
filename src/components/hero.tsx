@@ -28,26 +28,59 @@ const AvatarStack: React.FC = () => (
     </div>
 );
 
+const floatAnimationStyle = `
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-22px); }
+  }
+`;
+
 const MembersCard: React.FC = () => (
-    <div className="absolute right-[6%] bottom-[9%] bg-[#f5f0e8] rounded-2xl p-5 w-52 shadow-2xl" style={{ zIndex: 30 }}>
-        <p className="text-[#1a0800] text-[13px] mb-2.5" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.08em" }}>
-            Our Members
-        </p>
-        <AvatarStack />
-        <div className="flex items-end justify-between mt-4">
-            <div>
-                <p className="text-[#1a0800] leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.8rem", letterSpacing: "0.02em" }}>
-                    100K+
-                </p>
-                <p className="text-[#666] text-[11px] mt-0.5 font-sans">Monthly Listeners</p>
-            </div>
-            <div className="w-9 h-9 rounded-full flex items-center justify-center mb-1 flex-shrink-0" style={{ background: "linear-gradient(135deg,#bfaa90,#9a8870)" }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                    <path d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
+    <>
+        <style>{floatAnimationStyle}</style>
+        <div
+            className="absolute right-[6%] bottom-[9%] bg-[#f5f0e8] rounded-2xl p-5 w-52 shadow-2xl"
+            style={{
+                zIndex: 30,
+                animation: "floatCard 4s ease-in-out infinite",
+            }}
+        >
+            <p
+                className="text-[#1a0800] text-[13px] mb-2.5"
+                style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.08em" }}
+            >
+                Our Members
+            </p>
+            <AvatarStack />
+            <div className="flex items-end justify-between mt-4">
+                <div>
+                    <p
+                        className="text-[#1a0800] leading-none"
+                        style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.8rem", letterSpacing: "0.02em" }}
+                    >
+                        100K+
+                    </p>
+                    <p className="text-[#666] text-[11px] mt-0.5 font-sans">Monthly Listeners</p>
+                </div>
+                <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center mb-1 flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg,#bfaa90,#9a8870)" }}
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-4 h-4"
+                    >
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                </div>
             </div>
         </div>
-    </div>
+    </>
 );
 
 const Hero: React.FC = () => {
