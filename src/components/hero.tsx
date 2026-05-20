@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
         <>
             <style>{fontStyle}</style>
             <section
-                className="relative bg-[#1c0d07] w-full flex flex-col overflow-hidden"
+                className="relative bg-[#1c0d07] w-full flex flex-col overflow-hidden pt-5"
                 style={{ height: "120vh" }}
             >
                 <div
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
                         className="w-full h-full object-cover object-top"
                         style={
                             {
-                                height: "850px",
+                                height: "830px",
                                 width: "1200px",
                             }
                         }
