@@ -81,7 +81,7 @@ const FooterSection: React.FC = () => {
                         width: "100%",
                     }}
                 >
-                    <img
+                    {/* <img
                         src={MIC_IMG}
                         alt="Podcast microphone"
                         style={{
@@ -90,7 +90,7 @@ const FooterSection: React.FC = () => {
                             display: "block",
                             margin: "0 auto",
                         }}
-                    />
+                    /> */}
                 </div>
             </div>
 

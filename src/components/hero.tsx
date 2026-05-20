@@ -2,7 +2,7 @@ import React from "react";
 
 const fontStyle = `@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');`;
 
-const WOMAN_IMG = "/images/female-podcast.png"
+const WOMAN_IMG = "/images/mic.png"
 
 const AvatarStack: React.FC = () => (
     <div className="flex items-center">
@@ -96,8 +96,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div
-                    className="absolute pointer-events-none"
-                    style={{ zIndex: 20, bottom: "", top: "-3.15%", left: "46%", transform: "translateX(-50%)", width: "clamp(770px, 30vw, 420px)", height: "75vh" }}
+                    className="absolute pointer-events-none pt-11.5"
+                    style={{ zIndex: 20, bottom: "", top: "", left: "46%", transform: "translateX(-50%)", width: "clamp(770px, 30vw, 420px)", height: "75vh" }}
                 >
                     <img
                         src={WOMAN_IMG}
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
                         className="w-full h-full object-cover object-top"
                         style={
                             {
-                                height: "900px",
+                                height: "850px",
                                 width: "1300px",
                             }
                         }

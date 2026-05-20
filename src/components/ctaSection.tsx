@@ -15,9 +15,6 @@ const CTASection: React.FC = () => {
                 className="relative w-full overflow-hidden flex flex-col items-center justify-center"
                 style={{ minHeight: "100vh", padding: "80px 24px", background: "#120704" }}
             >
-                {/* ── Soft Bokeh Gradient Background ── */}
-
-                {/* Soft Orange/Peach Blob - Top Left */}
                 <div
                     className="absolute rounded-full pointer-events-none"
                     style={{
@@ -34,7 +31,6 @@ const CTASection: React.FC = () => {
                     }}
                 />
 
-                {/* Soft Blue Blob - Top Right */}
                 <div
                     className="absolute rounded-full pointer-events-none"
                     style={{
@@ -51,7 +47,6 @@ const CTASection: React.FC = () => {
                     }}
                 />
 
-                {/* Soft Pink/Mauve Blob - Bottom Center */}
                 <div
                     className="absolute rounded-full pointer-events-none"
                     style={{
@@ -68,7 +63,6 @@ const CTASection: React.FC = () => {
                     }}
                 />
 
-                {/* Soft Teal Accent Blob - Bottom Left */}
                 <div
                     className="absolute rounded-full pointer-events-none"
                     style={{
