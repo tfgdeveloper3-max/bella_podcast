@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
                         className="text-white uppercase flex justify-between w-full leading-[0.75]"
                         style={{
                             fontFamily: "'Bebas Neue', sans-serif",
-                            fontSize: "clamp(6rem, 14vw, 12rem)",
+                            fontSize: "clamp(5rem, 12vw, 10rem)",
                             letterSpacing: "-0.03em",
                         }}
                     >
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
                         className="text-white uppercase leading-[0.95] mt-4"
                         style={{
                             fontFamily: "'Bebas Neue', sans-serif",
-                            fontSize: "clamp(6rem, 14vw, 12rem)",
+                            fontSize: "clamp(5rem, 12vw, 10rem)",
                             letterSpacing: "-0.03em",
                         }}
                     >
@@ -129,8 +129,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div
-                    className="absolute pointer-events-none pt-48"
-                    style={{ zIndex: 20, bottom: "", top: "", left: "46%", transform: "translateX(-50%)", width: "clamp(700px, 35vw, 450px)", height: "75vh" }}
+                    className="absolute pointer-events-none pt-11.5"
+                    style={{ zIndex: 20, bottom: "", top: "", left: "46%", transform: "translateX(-50%)", width: "clamp(700px, 30vw, 400px)", height: "75vh" }}
                 >
                     <img
                         src={WOMAN_IMG}
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
                         className="w-full h-full object-cover object-top"
                         style={
                             {
-                                height: "700px",
+                                height: "850px",
                                 width: "1200px",
                             }
                         }
