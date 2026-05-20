@@ -1,6 +1,6 @@
 import React from "react";
 
-const MIC_IMG = "/images/mic.png";
+const MIC_IMG = "/images/Mic2.png";
 
 const FooterSection: React.FC = () => {
     return (
@@ -74,23 +74,23 @@ const FooterSection: React.FC = () => {
                 </div>
 
                 <div
-                    className="absolute left-1/2 bottom-0 top-21 pointer-events-none"
+                    className="absolute left-1/2 bottom-0 top-[-80%] pointer-events-none"
                     style={{
-                        transform: "translateX(-50%)",
+                        transform: "translateX(-55%)",
                         zIndex: 20,
                         width: "100%",
                     }}
                 >
-                    {/* <img
+                    <img
                         src={MIC_IMG}
                         alt="Podcast microphone"
                         style={{
-                            width: "clamp(700px,100vw,1900px)",
+                            width: "clamp(500px,70vw,900px)",
                             height: "auto",
                             display: "block",
                             margin: "0 auto",
                         }}
-                    /> */}
+                    />
                 </div>
             </div>
 
@@ -118,7 +118,7 @@ const FooterSection: React.FC = () => {
                         className="text-center font-black uppercase w-full leading-none"
                         style={{
                             fontSize: "clamp(15rem,26vw,24rem)",
-                            letterSpacing: "-0.04em",
+                            letterSpacing: "0.15em",
                             background: "linear-gradient(to bottom, #f0ece0 0%, #e8c890 35%, #d06020 70%, #a03800 100%)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",

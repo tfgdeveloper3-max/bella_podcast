@@ -129,8 +129,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div
-                    className="absolute pointer-events-none pt-11.5"
-                    style={{ zIndex: 20, bottom: "", top: "", left: "46%", transform: "translateX(-50%)", width: "clamp(770px, 30vw, 420px)", height: "75vh" }}
+                    className="absolute pointer-events-none pt-48"
+                    style={{ zIndex: 20, bottom: "", top: "", left: "46%", transform: "translateX(-50%)", width: "clamp(700px, 35vw, 450px)", height: "75vh" }}
                 >
                     <img
                         src={WOMAN_IMG}
@@ -138,8 +138,8 @@ const Hero: React.FC = () => {
                         className="w-full h-full object-cover object-top"
                         style={
                             {
-                                height: "850px",
-                                width: "1300px",
+                                height: "700px",
+                                width: "1200px",
                             }
                         }
                     />
